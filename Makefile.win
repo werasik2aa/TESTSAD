@@ -1,0 +1,76 @@
+# Project: sdfs
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = com.o commands.o diag_qcdm.o errors.o ipv6pref.o logs.o main.o modepref.o reset.o result.o test-qcdm.o test-qcdm-com.o test-qcdm-crc.o test-qcdm-escaping.o test-qcdm-result.o test-qcdm-utils.o utils.o
+LINKOBJ  = com.o commands.o diag_qcdm.o errors.o ipv6pref.o logs.o main.o modepref.o reset.o result.o test-qcdm.o test-qcdm-com.o test-qcdm-crc.o test-qcdm-escaping.o test-qcdm-result.o test-qcdm-utils.o utils.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = sdfs.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+com.o: com.c
+	$(CPP) -c com.c -o com.o $(CXXFLAGS)
+
+commands.o: commands.c
+	$(CPP) -c commands.c -o commands.o $(CXXFLAGS)
+
+diag_qcdm.o: diag_qcdm.c
+	$(CPP) -c diag_qcdm.c -o diag_qcdm.o $(CXXFLAGS)
+
+errors.o: errors.c
+	$(CPP) -c errors.c -o errors.o $(CXXFLAGS)
+
+ipv6pref.o: ipv6pref.c
+	$(CPP) -c ipv6pref.c -o ipv6pref.o $(CXXFLAGS)
+
+logs.o: logs.c
+	$(CPP) -c logs.c -o logs.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+modepref.o: modepref.c
+	$(CPP) -c modepref.c -o modepref.o $(CXXFLAGS)
+
+reset.o: reset.c
+	$(CPP) -c reset.c -o reset.o $(CXXFLAGS)
+
+result.o: result.c
+	$(CPP) -c result.c -o result.o $(CXXFLAGS)
+
+test-qcdm.o: test-qcdm.c
+	$(CPP) -c test-qcdm.c -o test-qcdm.o $(CXXFLAGS)
+
+test-qcdm-com.o: test-qcdm-com.c
+	$(CPP) -c test-qcdm-com.c -o test-qcdm-com.o $(CXXFLAGS)
+
+test-qcdm-crc.o: test-qcdm-crc.c
+	$(CPP) -c test-qcdm-crc.c -o test-qcdm-crc.o $(CXXFLAGS)
+
+test-qcdm-escaping.o: test-qcdm-escaping.c
+	$(CPP) -c test-qcdm-escaping.c -o test-qcdm-escaping.o $(CXXFLAGS)
+
+test-qcdm-result.o: test-qcdm-result.c
+	$(CPP) -c test-qcdm-result.c -o test-qcdm-result.o $(CXXFLAGS)
+
+test-qcdm-utils.o: test-qcdm-utils.c
+	$(CPP) -c test-qcdm-utils.c -o test-qcdm-utils.o $(CXXFLAGS)
+
+utils.o: utils.c
+	$(CPP) -c utils.c -o utils.o $(CXXFLAGS)
